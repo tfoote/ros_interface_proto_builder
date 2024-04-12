@@ -26,10 +26,10 @@ rosdep update
 cd ${DISTRO}
 rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers"
 
-colcon build --packages-up-to rmw_implementation_cmake
+colcon build --event-handlers=console_direct+ --packages-up-to rmw_implementation_cmake
 
 grep -rI rmw_implementation install
 
-colcon build
+colcon build --event-handlers=console_direct+
 
 
