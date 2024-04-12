@@ -22,3 +22,12 @@ for proto in $protos; do
 
 done
 
+git checkout generated_protos
+
+# Set git config if unset
+git config user.name || git config user.name "Automatic Update"
+git config user.email || git config user.email "tullyfoote@intrinsic.ai"
+
+git add results
+git commit -m"Updating protos for distro ${DISTRO}"
+git push
