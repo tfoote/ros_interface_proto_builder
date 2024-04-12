@@ -1,0 +1,25 @@
+name: Update Protos
+
+on:
+  workflow_dispatch:
+  schedule:
+   - cron: '35 3 * * *'
+
+jobs:
+  unit_tests:
+    name: Update Protos
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        container: ['ros:rolling']
+    container: ${{ matrix.container }}
+
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Build protos
+      run: ./build_protos.bash
+    - name: Commit protos
+      run: ./commit_protos.bash
+ 

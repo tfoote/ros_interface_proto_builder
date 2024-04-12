@@ -1,0 +1,23 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from rosidl_generator_py:msg/StringArrays.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package rosidl_generator_py.msg.pb;
+
+message StringArrays
+{
+
+  repeated string ub_string_static_array_value   =  94921898;
+  repeated string ub_string_ub_array_value       =  71089813;
+  repeated string ub_string_dynamic_array_value  = 387623475;
+  repeated string string_dynamic_array_value     = 360287057;
+  repeated string string_static_array_value      = 198885357;
+  repeated string string_bounded_array_value     =  96476583;
+  repeated string def_string_dynamic_array_value = 349125206;
+  repeated string def_string_static_array_value  =  61676705;
+  repeated string def_string_bounded_array_value =  67743458;
+  repeated string def_various_quotes             =  54475471;
+  repeated string def_various_commas             = 451128831;
+}

@@ -1,0 +1,15 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from rosidl_generator_tests:msg/Nested.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package rosidl_generator_tests.msg.pb;
+
+import "rosidl_generator_tests/msg/BasicTypes.proto";
+
+message Nested
+{
+
+  rosidl_generator_tests.msg.pb.BasicTypes basic_types_value = 107070447;
+}

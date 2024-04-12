@@ -1,0 +1,28 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from lifecycle_msgs:srv/GetAvailableTransitions.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package lifecycle_msgs.srv.pb;
+
+import "lifecycle_msgs/msg/TransitionDescription.proto";
+
+option cc_generic_services = true;
+
+message GetAvailableTransitions_Request
+{
+
+  uint32 structure_needs_at_least_one_member = 407246362;
+}
+
+message GetAvailableTransitions_Response
+{
+
+  repeated lifecycle_msgs.msg.pb.TransitionDescription available_transitions = 235384844;
+}
+
+service GetAvailableTransitions
+{
+  rpc Call (GetAvailableTransitions_Request) returns (GetAvailableTransitions_Response);
+}

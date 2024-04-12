@@ -1,0 +1,13 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from rosidl_typesupport_tests:msg/Empty.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package rosidl_typesupport_tests.msg.pb;
+
+message Empty
+{
+
+  uint32 structure_needs_at_least_one_member = 407246362;
+}

@@ -1,0 +1,13 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from rosidl_generator_py:msg/BuiltinTypeSequencesIdl.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package rosidl_generator_py.msg.pb;
+
+message BuiltinTypeSequencesIdl
+{
+
+  string char_sequence_unbounded = 453487627;
+}

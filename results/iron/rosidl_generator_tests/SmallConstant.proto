@@ -1,0 +1,13 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from rosidl_generator_tests:msg/SmallConstant.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package rosidl_generator_tests.msg.pb;
+
+message SmallConstant
+{
+
+  uint32 structure_needs_at_least_one_member = 407246362;
+}

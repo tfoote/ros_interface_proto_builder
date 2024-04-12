@@ -1,0 +1,14 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from rosidl_generator_py:msg/Property.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package rosidl_generator_py.msg.pb;
+
+message Property
+{
+
+  string property = 200421483;
+  string anything = 329896780;
+}

@@ -1,0 +1,31 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from nav_msgs:srv/LoadMap.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package nav_msgs.srv.pb;
+
+import "nav_msgs/msg/OccupancyGrid.proto";
+
+option cc_generic_services = true;
+
+message LoadMap_Request
+{
+
+  string map_url = 355362946;
+}
+
+message LoadMap_Response
+{
+
+
+  //Returned map is only valid if result equals RESULT_SUCCESS
+  nav_msgs.msg.pb.OccupancyGrid map    = 330153544;
+  uint32                        result = 325764348;
+}
+
+service LoadMap
+{
+  rpc Call (LoadMap_Request) returns (LoadMap_Response);
+}
