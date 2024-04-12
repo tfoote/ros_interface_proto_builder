@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        container: ['ros:iron', 'ros:rolling']
+        container: ['ros:rolling']
     container: ${{ matrix.container }}
 
 
