@@ -5,7 +5,7 @@
 set -e
 
 export DISTRO=iron
-TARGET_PACKAGES="sensor_msgs geometry_msgs rcl"
+TARGET_PACKAGES="sensor_msgs geometry_msgs"
 
 sudo apt-get update && sudo apt-get install -qy python3-rosinstall-generator python3-vcstool
 
@@ -26,9 +26,6 @@ rosdep update
 cd ${DISTRO}
 rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers"
 
-# Skip this test package for now
-touch src/rosidl_typesupport/rosidl_typesupport_tests/COLCON_IGNORE
-
-colcon build --event-handlers=console_direct+
+colcon build --event-handlers=console_direct+ --cmake-args='-DBUILD_TESTING=OFF'
 
 
