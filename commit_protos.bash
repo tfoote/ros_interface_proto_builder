@@ -3,12 +3,11 @@
 # Run this in rocker --home --user
 
 set -e
-
-export DISTRO=iron
+set -x
 
 mkdir -p results
 
-protos=$(find iron/install/*/include -name '*.proto')
+protos=$(find ${ROS_DISTRO}/install/*/include -name '*.proto')
 
 git fetch origin
 git checkout -b auto_update origin/generated_protos
@@ -23,7 +22,7 @@ for proto in $protos; do
     echo $proto
     package=$(echo $proto | cut -d/ -f 3)
     echo $package
-    result_dir=results/${DISTRO}/${package}/
+    result_dir=results/${ROS_DISTRO}/${package}/
     mkdir -p $result_dir
     cp $proto $result_dir
 
@@ -33,7 +32,7 @@ done
 git add results
 if git diff --cached --exit-code
 then
-    git commit -m"Updating protos for distro ${DISTRO}"
+    git commit -m"Updating protos for distro ${ROS_DISTRO}"
     git push origin auto_update:generated_protos
 else
     echo "Nothing to commit, skipping commit and push"

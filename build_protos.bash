@@ -3,6 +3,7 @@
 # Run this in rocker --home --user
 
 set -e
+set -x
 
 TARGET_PACKAGES="common_interfaces can_msgs aruco_msgs control_msgs pcl_msgs"
 
