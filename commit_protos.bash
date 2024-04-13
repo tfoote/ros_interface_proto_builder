@@ -15,7 +15,6 @@ git checkout generated_protos
 # Set git config if unset
 git config user.name || git config user.name "Automatic Update"
 git config user.email || git config user.email "tullyfoote@intrinsic.ai"
-git config --add safe.directory '*'
 
 for proto in $protos; do
 
