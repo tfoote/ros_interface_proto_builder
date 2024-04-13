@@ -31,5 +31,10 @@ done
 
 
 git add results
-git commit -m"Updating protos for distro ${DISTRO}"
-git push origin auto_update:generated_protos
+if git diff --cached --exit-code
+then
+    git commit -m"Updating protos for distro ${DISTRO}"
+    git push origin auto_update:generated_protos
+else
+    echo "Nothing to commit, skipping commit and push"
+fi
