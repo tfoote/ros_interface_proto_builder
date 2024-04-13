@@ -4,26 +4,25 @@
 
 set -e
 
-export DISTRO=iron
 TARGET_PACKAGES="common_interfaces can_msgs aruco_msgs control_msgs pcl_msgs"
 
 sudo apt-get update && sudo apt-get install -qy python3-rosinstall-generator python3-vcstool
 
-mkdir -p ${DISTRO}/src
+mkdir -p ${ROS_DISTRO}/src
 
 # get all of rosdistro and msg packages
-rosinstall_generator --rosdistro ${DISTRO} --upstream-devel --format repos ${TARGET_PACKAGES} --deps > ${DISTRO}_upstream.repos
-vcs import --input ${DISTRO}_upstream.repos ${DISTRO}/src --skip-existing
+rosinstall_generator --rosdistro ${ROS_DISTRO} --upstream-devel --format repos ${TARGET_PACKAGES} --deps > ${ROS_DISTRO}_upstream.repos
+vcs import --input ${ROS_DISTRO}_upstream.repos ${ROS_DISTRO}/src --skip-existing
 
 
 #proto specific content
-vcs import --input ${DISTRO}_proto.repos ${DISTRO}/src --force
+vcs import --input ${ROS_DISTRO}_proto.repos ${ROS_DISTRO}/src --force
 
 sudo rosdep init || true
 rosdep update
 
 
-cd ${DISTRO}
+cd ${ROS_DISTRO}
 rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers"
 
 colcon build --event-handlers=console_direct+ --cmake-args='-DBUILD_TESTING=OFF'
