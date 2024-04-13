@@ -5,7 +5,7 @@
 set -e
 
 export DISTRO=iron
-TARGET_PACKAGES="sensor_msgs geometry_msgs"
+TARGET_PACKAGES="sensor_msgs geometry_msgs rcl"
 
 sudo apt-get update && sudo apt-get install -qy python3-rosinstall-generator python3-vcstool
 
