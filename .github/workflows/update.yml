@@ -10,8 +10,9 @@ jobs:
     name: Update Protos
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        container: ['ros:rolling']
+        container: ['ros:iron', 'ros:rolling']
     container: ${{ matrix.container }}
 
 

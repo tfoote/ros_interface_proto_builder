@@ -1,0 +1,17 @@
+repositories:
+  rosidl:
+    type: git
+    url: https://github.com/gonzodepedro/rosidl.git
+    version: streamline-file-generation-bumped
+  rosidl_typesupport:
+    type: git
+    url: https://github.com/ros2/rosidl_typesupport.git
+    version: tfoote/streamline-file-generation
+  rosidl_typesupport_fastrtps:
+    type: git
+    url: https://github.com/DanMesh/rosidl_typesupport_fastrtps.git
+    version: streamline-file-generation
+  rosidl_typesupport_protobuf:
+    type: git
+    url: https://github.com/tfoote/rosidl_typesupport_protobuf.git
+    version: rosidl-cli-generate-proto-test
