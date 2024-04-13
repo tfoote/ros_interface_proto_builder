@@ -10,7 +10,7 @@ mkdir -p results
 
 protos=$(find iron/install/*/include -name '*.proto')
 
-git checkout generated_protos
+git checkout generated_protos --
 
 # Set git config if unset
 git config user.name || git config user.name "Automatic Update"
