@@ -26,9 +26,9 @@ rosdep update
 cd ${ROS_DISTRO}
 
 # These packages are missing type_description_interfaces service_msgs on Humble no need to build the tests for this
-touch src/rosidl/typesupport_integration_tests/COLCON_IGNORE
-touch src/rosidl/typesupport_tests/COLCON_IGNORE
 touch src/rosidl/rosidl_generator_tests/COLCON_IGNORE
+touch src/rosidl/rosidl_typesupport_introspection_tests/COLCON_IGNORE
+touch src/rosidl_typesupport/rosidl_typesupport_tests/COLCON_IGNORE
 # testing if they are needed to be protected by rosdep too
 # rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers type_description_interfaces service_msgs"
 
