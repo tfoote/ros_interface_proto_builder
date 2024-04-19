@@ -1,0 +1,22 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/JointTrajectoryControllerState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb;
+
+import "std_msgs/msg/Header.proto";
+import "trajectory_msgs/msg/JointTrajectoryPoint.proto";
+
+message JointTrajectoryControllerState
+{
+
+  std_msgs.msg.pb.Header                      header      = 242399333;
+  repeated string                             joint_names = 492788101;
+  trajectory_msgs.msg.pb.JointTrajectoryPoint desired     = 131111205;
+  trajectory_msgs.msg.pb.JointTrajectoryPoint actual      =  41787894;
+
+  //Redundant, but useful
+  trajectory_msgs.msg.pb.JointTrajectoryPoint error       = 501073964;
+}
