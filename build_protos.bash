@@ -5,7 +5,7 @@
 set -e
 set -x
 
-TARGET_PACKAGES="common_interfaces can_msgs aruco_msgs control_msgs pcl_msgs"
+TARGET_PACKAGES="common_interfaces can_msgs control_msgs pcl_msgs"
 
 sudo apt-get update && sudo apt-get install -qy python3-rosinstall-generator python3-vcstool
 
