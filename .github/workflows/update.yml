@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   schedule:
    - cron: '35 3 * * *'
+  pull_request:
 
 jobs:
   unit_tests:
@@ -27,4 +28,6 @@ jobs:
         chown -R $(id -u):$(id -g) $PWD
     - name: Commit protos
       run: ./commit_protos.bash
- 
+    - name: Push Protos
+      if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      run: git push origin auto_update:generated_protos
