@@ -5,6 +5,9 @@ on:
   schedule:
    - cron: '35 3 * * *'
   pull_request:
+  push:
+    branches:
+      - 'main'
 
 jobs:
   unit_tests:
