@@ -33,7 +33,6 @@ git add results
 if ! git diff --cached --exit-code
 then
     git commit -m"Updating protos for distro ${ROS_DISTRO}"
-    git push origin auto_update:generated_protos
 else
     echo "Nothing to commit, skipping commit and push"
 fi
