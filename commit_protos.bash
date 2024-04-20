@@ -7,7 +7,7 @@ set -x
 
 mkdir -p results
 
-msg_protos=$(find ${ROS_DISTRO}/install/*/include/*/msg/* -name '*.proto')
+protos=$(find ${ROS_DISTRO}/install/*/include/* -name '*.proto')
 
 git fetch origin
 git checkout -b auto_update origin/generated_protos
@@ -16,13 +16,14 @@ git checkout -b auto_update origin/generated_protos
 git config user.name || git config user.name "Automatic Update"
 git config user.email || git config user.email "tullyfoote@intrinsic.ai"
 
-for proto in $msg_protos; do
+for proto in $protos; do
 
     echo "Proto is at"
     echo $proto
     package=$(echo $proto | cut -d/ -f 3)
+    proto_type=$(echo $proto | cut -d/ -f 7)
     echo $package
-    result_dir=results/${ROS_DISTRO}/${package}/
+    result_dir=results/${ROS_DISTRO}/${package}/${proto_type}
     mkdir -p $result_dir
     cp $proto $result_dir
 
