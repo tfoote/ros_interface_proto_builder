@@ -7,7 +7,7 @@ set -x
 
 mkdir -p results
 
-protos=$(find ${ROS_DISTRO}/install/*/include -name '*.proto')
+protos=$(find ${ROS_DISTRO}/install/*/include/* -name '*.proto')
 
 git fetch origin
 git checkout -b auto_update origin/generated_protos
@@ -21,8 +21,9 @@ for proto in $protos; do
     echo "Proto is at"
     echo $proto
     package=$(echo $proto | cut -d/ -f 3)
+    proto_type=$(echo $proto | cut -d/ -f 7)
     echo $package
-    result_dir=results/${ROS_DISTRO}/${package}/
+    result_dir=results/${ROS_DISTRO}/${package}/${proto_type}
     mkdir -p $result_dir
     cp $proto $result_dir
 
