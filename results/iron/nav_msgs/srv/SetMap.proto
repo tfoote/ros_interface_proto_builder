@@ -1,0 +1,36 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from nav_msgs:srv/SetMap.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package nav_msgs.srv.pb;
+
+import "geometry_msgs/msg/PoseWithCovarianceStamped.proto";
+import "nav_msgs/msg/OccupancyGrid.proto";
+
+option cc_generic_services = true;
+
+message SetMap_Request
+{
+
+
+  //Requested 2D map to be set.
+  nav_msgs.msg.pb.OccupancyGrid                  map          = 330153544;
+
+  //Estimated initial pose when setting new map.
+  geometry_msgs.msg.pb.PoseWithCovarianceStamped initial_pose = 442464214;
+}
+
+message SetMap_Response
+{
+
+
+  //True if the map was successfully set, false otherwise.
+  bool success = 251719510;
+}
+
+service SetMap
+{
+  rpc Call (SetMap_Request) returns (SetMap_Response);
+}
