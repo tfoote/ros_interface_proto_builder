@@ -1,0 +1,17 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from geometry_msgs:msg/Twist.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package geometry_msgs.msg.pb;
+
+import "geometry_msgs/msg/Vector3.proto";
+
+//This expresses velocity in free space broken into its linear and angular parts.
+message Twist
+{
+
+  geometry_msgs.msg.pb.Vector3 linear  = 232701084;
+  geometry_msgs.msg.pb.Vector3 angular = 377521384;
+}
