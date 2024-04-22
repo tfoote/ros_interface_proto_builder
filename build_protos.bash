@@ -7,7 +7,7 @@ set -x
 
 TARGET_PACKAGES="common_interfaces can_msgs control_msgs pcl_msgs"
 
-sudo apt-get update && sudo apt-get install -qy python3-rosinstall-generator python3-vcstool
+echo ROS_DISTRO: ${ROS_DISTRO:?is_unset}
 
 mkdir -p ${ROS_DISTRO}/src
 
