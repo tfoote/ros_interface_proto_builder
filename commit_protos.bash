@@ -9,7 +9,7 @@ mkdir -p results
 
 protos=$(find ${ROS_DISTRO}/install/*/include/* -name '*.proto')
 
-git fetch origin
+#git fetch origin
 git checkout -b auto_update origin/generated_protos
 
 # Set git config if unset
@@ -27,6 +27,25 @@ for proto in $protos; do
     mkdir -p $result_dir
     cp $proto $result_dir
 
+done
+
+package_dirs=$(colcon list -p)
+
+for pd in $package_dirs; do
+    license_file=$pd/LICENSE
+    echo Trying License file: $license_file
+    if ! [ -f $license_file ] ; then
+        license_file=$(dirname $pd)/LICENSE
+    fi
+    if ! [ -f $license_file ] ; then
+	echo NO license file at $license_file either, continuing
+	continue
+    fi
+    package=$(basename $pd)
+    result_dir=results/${ROS_DISTRO}/${package}/
+    if [ -d $result_dir ] ; then
+	cp $license_file $result_dir
+    fi
 done
 
 echo "Git adding results directory"
