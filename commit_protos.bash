@@ -9,7 +9,7 @@ mkdir -p results
 
 protos=$(find ${ROS_DISTRO}/install/*/include/* -name '*.proto')
 
-#git fetch origin
+git fetch origin
 git checkout -b auto_update origin/generated_protos
 
 # Set git config if unset
