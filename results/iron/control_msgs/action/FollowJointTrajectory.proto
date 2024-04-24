@@ -8,10 +8,13 @@ package control_msgs.action.pb;
 
 import "builtin_interfaces/msg/Duration.proto";
 import "builtin_interfaces/msg/Time.proto";
+import "control_msgs/msg/JointComponentTolerance.proto";
 import "control_msgs/msg/JointTolerance.proto";
 import "std_msgs/msg/Header.proto";
 import "trajectory_msgs/msg/JointTrajectory.proto";
 import "trajectory_msgs/msg/JointTrajectoryPoint.proto";
+import "trajectory_msgs/msg/MultiDOFJointTrajectory.proto";
+import "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.proto";
 import "unique_identifier_msgs/msg/UUID.proto";
 
 option cc_generic_services = true;
@@ -19,7 +22,10 @@ option cc_generic_services = true;
 message FollowJointTrajectory_Goal
 {
 
-  trajectory_msgs.msg.pb.JointTrajectory      trajectory          =  72879695;
+  trajectory_msgs.msg.pb.JointTrajectory               trajectory               =  72879695;
+
+  //The trajectory for all planar or floating joints (i.e. individual joints with more than one DOF)
+  trajectory_msgs.msg.pb.MultiDOFJointTrajectory       multi_dof_trajectory     = 359131408;
 
   //Tolerances for the trajectory.  If the measured joint values fall
   //outside the tolerances the trajectory goal is aborted.  Any
@@ -29,7 +35,8 @@ message FollowJointTrajectory_Goal
   //Tolerances applied to the joints as the trajectory is executed.  If
   //violated, the goal aborts with error_code set to
   //PATH_TOLERANCE_VIOLATED.
-  repeated control_msgs.msg.pb.JointTolerance path_tolerance      = 211241172;
+  repeated control_msgs.msg.pb.JointTolerance          path_tolerance           = 211241172;
+  repeated control_msgs.msg.pb.JointComponentTolerance component_path_tolerance = 467421339;
 
   //To report success, the joints must be within goal_tolerance of the
   //final trajectory value.  The goal must be achieved by time the
@@ -41,8 +48,9 @@ message FollowJointTrajectory_Goal
   //If the joints are not within goal_tolerance after "trajectory finish
   //time" + goal_time_tolerance, the goal aborts with error_code set to
   //GOAL_TOLERANCE_VIOLATED
-  repeated control_msgs.msg.pb.JointTolerance goal_tolerance      = 292315856;
-  builtin_interfaces.msg.pb.Duration          goal_time_tolerance = 513398654;
+  repeated control_msgs.msg.pb.JointTolerance          goal_tolerance           = 292315856;
+  repeated control_msgs.msg.pb.JointComponentTolerance component_goal_tolerance = 103240187;
+  builtin_interfaces.msg.pb.Duration                   goal_time_tolerance      = 513398654;
 }
 
 message FollowJointTrajectory_SendGoal_Request
@@ -91,11 +99,15 @@ message FollowJointTrajectory_GetResult_Response
 message FollowJointTrajectory_Feedback
 {
 
-  std_msgs.msg.pb.Header                      header      = 242399333;
-  repeated string                             joint_names = 492788101;
-  trajectory_msgs.msg.pb.JointTrajectoryPoint desired     = 131111205;
-  trajectory_msgs.msg.pb.JointTrajectoryPoint actual      =  41787894;
-  trajectory_msgs.msg.pb.JointTrajectoryPoint error       = 501073964;
+  std_msgs.msg.pb.Header                              header                = 242399333;
+  repeated string                                     joint_names           = 492788101;
+  trajectory_msgs.msg.pb.JointTrajectoryPoint         desired               = 131111205;
+  trajectory_msgs.msg.pb.JointTrajectoryPoint         actual                =  41787894;
+  trajectory_msgs.msg.pb.JointTrajectoryPoint         error                 = 501073964;
+  repeated string                                     multi_dof_joint_names = 402342375;
+  trajectory_msgs.msg.pb.MultiDOFJointTrajectoryPoint multi_dof_desired     = 120091320;
+  trajectory_msgs.msg.pb.MultiDOFJointTrajectoryPoint multi_dof_actual      =  12813823;
+  trajectory_msgs.msg.pb.MultiDOFJointTrajectoryPoint multi_dof_error       = 296336147;
 }
 
 message FollowJointTrajectory_FeedbackMessage

@@ -1,0 +1,20 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/MultiDOFStateStamped.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb;
+
+import "control_msgs/msg/SingleDOFState.proto";
+import "std_msgs/msg/Header.proto";
+
+//This message presents current controller state of multiple degrees of freedom.
+message MultiDOFStateStamped
+{
+
+
+  //Header timestamp should be update time of controller state
+  std_msgs.msg.pb.Header                      header     = 242399333;
+  repeated control_msgs.msg.pb.SingleDOFState dof_states = 457540557;
+}
