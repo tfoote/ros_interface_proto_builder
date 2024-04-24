@@ -35,4 +35,4 @@ jobs:
       run: ./commit_protos.bash
     - name: Push Protos
       if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-      run: git push origin auto_update:generated_protos
+      run: git push origin --force ${ROS_DISTRO}_generated

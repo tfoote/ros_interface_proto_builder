@@ -9,8 +9,11 @@ mkdir -p results
 
 protos=$(find ${ROS_DISTRO}/install/*/include/* -name '*.proto')
 
-git fetch origin
-git checkout -b auto_update origin/generated_protos
+current_branch=$(git branch --show-current)
+target_branch=${ROS_DISTRO}_generated
+
+git branch -D ${target_branch} || true
+git checkout --orphan ${target_branch}
 
 # Set git config if unset
 git config user.name || git config user.name "Automatic Update"
@@ -49,10 +52,12 @@ for pd in $package_dirs; do
 done
 
 echo "Git adding results directory"
-git add results
+git add results -f
 if ! git diff --cached --exit-code
 then
-    git commit -m"Updating protos for distro ${ROS_DISTRO}"
+    git commit -m"Updating protos for distro ${ROS_DISTRO} in branch ${target_branch}"
 else
     echo "Nothing to commit, skipping commit and push"
 fi
+
+git checkout ${current_branch}
