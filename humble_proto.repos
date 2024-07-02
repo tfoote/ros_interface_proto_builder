@@ -1,0 +1,5 @@
+repositories:
+  rosidl_typesupport_protobuf:
+    type: git
+    url: https://github.com/eclipse-ecal/rosidl_typesupport_protobuf.git
+    version: master
