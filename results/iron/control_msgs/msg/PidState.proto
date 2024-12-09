@@ -1,0 +1,28 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/PidState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb;
+
+import "builtin_interfaces/msg/Duration.proto";
+import "std_msgs/msg/Header.proto";
+
+message PidState
+{
+
+  std_msgs.msg.pb.Header             header    = 242399333;
+  builtin_interfaces.msg.pb.Duration timestep  = 341026827;
+  double                             error     = 501073964;
+  double                             error_dot = 376588147;
+  double                             p_error   = 388235780;
+  double                             i_error   =  90523214;
+  double                             d_error   =  78797395;
+  double                             p_term    =  82370678;
+  double                             i_term    =   3258160;
+  double                             d_term    = 481267789;
+  double                             i_max     =  56171972;
+  double                             i_min     = 525618340;
+  double                             output    = 215887869;
+}

@@ -1,0 +1,22 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from shape_msgs:msg/Mesh.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package shape_msgs.msg.pb;
+
+import "geometry_msgs/msg/Point.proto";
+import "shape_msgs/msg/MeshTriangle.proto";
+
+//Definition of a mesh.
+message Mesh
+{
+
+
+  //List of triangles; the index values refer to positions in vertices[].
+  repeated shape_msgs.msg.pb.MeshTriangle triangles = 135093897;
+
+  //The actual vertices that make up the mesh.
+  repeated geometry_msgs.msg.pb.Point     vertices  =  18008104;
+}
