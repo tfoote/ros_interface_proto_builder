@@ -13,5 +13,5 @@ repositories:
     version: tfoote/streamline-file-generation-rolling
   rosidl_typesupport_protobuf:
     type: git
-    url: https://github.com/tfoote/rosidl_typesupport_protobuf.git
-    version: rosidl-cli-generate-proto-test
+    url: https://github.com/codebot/rosidl_typesupport_protobuf.git
+    version: beardsworth/proto_conventions
