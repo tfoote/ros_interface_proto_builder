@@ -27,7 +27,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Install updated ROS repo key
-      run: sudo apt-get update && sudo apt-get install curl && sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+      run: sudo apt-get update --allow-insecure-repositories && sudo apt-get install curl && sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
     - name: Install Dependencies
       run: sudo apt-get update && sudo apt-get install -qy python3-rosinstall-generator python3-vcstool
     - name: Build protos
