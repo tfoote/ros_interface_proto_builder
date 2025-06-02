@@ -17,7 +17,7 @@ git checkout --orphan ${target_branch}
 
 # Set git config if unset
 git config user.name || git config user.name "Automatic Update"
-git config user.email || git config user.email "tullyfoote@intrinsic.ai"
+git config user.email || git config user.email "morganquigley@intrinsic.ai"
 
 for proto in $protos; do
 
@@ -41,13 +41,13 @@ for pd in $package_dirs; do
         license_file=$(dirname $pd)/LICENSE
     fi
     if ! [ -f $license_file ] ; then
-	echo NO license file at $license_file either, continuing
-	continue
+        echo NO license file at $license_file either, continuing
+        continue
     fi
     package=$(basename $pd)
     result_dir=results/${ROS_DISTRO}/${package}/
     if [ -d $result_dir ] ; then
-	cp $license_file $result_dir
+        cp $license_file $result_dir
     fi
 done
 
