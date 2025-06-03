@@ -41,8 +41,8 @@ for pd in $package_dirs; do
         license_file=$(dirname $pd)/LICENSE
     fi
     if ! [ -f $license_file ] ; then
-	echo NO license file at $license_file either, continuing
-	continue
+	echo NO license file at $license_file either aborting
+	exit -2
     fi
     package=$(basename $pd)
     result_dir=results/${ROS_DISTRO}/${package}/
