@@ -14,4 +14,4 @@ repositories:
   rosidl_typesupport_protobuf:
     type: git
     url: https://github.com/codebot/rosidl_typesupport_protobuf.git
-    version: beardsworth/proto_conventions
+    version: beardsworth/field_numbering
