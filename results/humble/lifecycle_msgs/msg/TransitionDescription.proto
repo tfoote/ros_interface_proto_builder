@@ -1,0 +1,23 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from lifecycle_msgs:msg/TransitionDescription.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package lifecycle_msgs.msg.pb;
+
+import "lifecycle_msgs/msg/State.proto";
+import "lifecycle_msgs/msg/Transition.proto";
+
+//The transition id and label of this description.
+message TransitionDescription
+{
+
+  lifecycle_msgs.msg.pb.Transition transition  = 387303074;
+
+  //The current state from which this transition transitions.
+  lifecycle_msgs.msg.pb.State      start_state = 382133097;
+
+  //The desired target state of this transition.
+  lifecycle_msgs.msg.pb.State      goal_state  = 458568711;
+}

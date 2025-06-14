@@ -1,0 +1,60 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/AdmittanceControllerState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb;
+
+import "geometry_msgs/msg/Quaternion.proto";
+import "geometry_msgs/msg/TransformStamped.proto";
+import "geometry_msgs/msg/TwistStamped.proto";
+import "geometry_msgs/msg/WrenchStamped.proto";
+import "sensor_msgs/msg/JointState.proto";
+import "std_msgs/msg/Float64MultiArray.proto";
+import "std_msgs/msg/Int8MultiArray.proto";
+import "std_msgs/msg/String.proto";
+
+//Admittance parameters
+message AdmittanceControllerState
+{
+
+
+  //6-vector of mass terms used in the admittance calculation
+  std_msgs.msg.pb.Float64MultiArray     mass                    = 201550602;
+
+  //6-vector of damping terms used in the admittance calculation
+  std_msgs.msg.pb.Float64MultiArray     damping                 =  68044325;
+
+  //6-vector of stiffness terms used in the admittance calculation
+  std_msgs.msg.pb.Float64MultiArray     stiffness               = 154641293;
+
+  //Frame information
+  //quaternion describing the orientation of the control frame
+  geometry_msgs.msg.pb.Quaternion       rot_base_control        = 502985066;
+
+  //force torque sensor transform at the reference joint configuration
+  geometry_msgs.msg.pb.TransformStamped ref_trans_base_ft       = 207656598;
+
+  //6-vector of 0/1 describing if admittance is enable in the corresponding control frame axis
+  std_msgs.msg.pb.Int8MultiArray        selected_axes           =   1692818;
+
+  //name of the force torque frame
+  std_msgs.msg.pb.String                ft_sensor_frame         =  38276078;
+
+  //State information
+  //calculated admittance position in cartesian space
+  geometry_msgs.msg.pb.TransformStamped admittance_position     = 312218203;
+
+  //calculated admittance acceleration in cartesian space
+  geometry_msgs.msg.pb.TwistStamped     admittance_acceleration = 105799084;
+
+  //calculated admittance velocity in cartesian space
+  geometry_msgs.msg.pb.TwistStamped     admittance_velocity     = 174611318;
+
+  //wrench used in the admittance calculation
+  geometry_msgs.msg.pb.WrenchStamped    wrench_base             = 419269376;
+
+  //calculated admittance offsets in joint space
+  sensor_msgs.msg.pb.JointState         joint_state             = 218094050;
+}

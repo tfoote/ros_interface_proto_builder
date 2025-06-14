@@ -1,0 +1,38 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from nav_msgs:srv/GetPlan.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package nav_msgs.srv.pb;
+
+import "geometry_msgs/msg/PoseStamped.proto";
+import "nav_msgs/msg/Path.proto";
+
+option cc_generic_services = true;
+
+message GetPlan_Request
+{
+
+
+  //The start pose for the plan
+  geometry_msgs.msg.pb.PoseStamped start     = 528050460;
+
+  //The final pose of the goal position
+  geometry_msgs.msg.pb.PoseStamped goal      = 484248182;
+
+  //If the goal is obstructed, how many meters the planner can
+  //relax the constraint in x and y before failing.
+  float                            tolerance = 124515308;
+}
+
+message GetPlan_Response
+{
+
+  nav_msgs.msg.pb.Path plan = 492467932;
+}
+
+service GetPlan
+{
+  rpc Call (GetPlan_Request) returns (GetPlan_Response);
+}
