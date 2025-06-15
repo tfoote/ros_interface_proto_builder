@@ -1,0 +1,22 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/DynamicInterfaceGroupValues.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb;
+
+import "control_msgs/msg/InterfaceValue.proto";
+import "std_msgs/msg/Header.proto";
+
+message DynamicInterfaceGroupValues
+{
+
+  std_msgs.msg.pb.Header                      header           = 242399333;
+
+  //List of interface group names , e.g. ["flange_analog_IOs", "flange_vacuum"]
+  repeated string                             interface_groups =   3280520;
+
+  //Key-value pairs representing interfaces and their corresponding values for each interface group listed in `interface_groups`
+  repeated control_msgs.msg.pb.InterfaceValue interface_values = 184263400;
+}
