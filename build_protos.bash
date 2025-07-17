@@ -5,7 +5,7 @@
 set -e
 set -x
 
-TARGET_PACKAGES="common_interfaces control_msgs pcl_msgs"
+TARGET_PACKAGES="common_interfaces control_msgs pcl_msgs console_bridge_vendor"
 
 echo ROS_DISTRO: ${ROS_DISTRO:?is_unset}
 
