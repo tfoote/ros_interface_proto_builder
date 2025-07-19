@@ -1,0 +1,18 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from rosgraph_msgs:msg/Clock.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package rosgraph_msgs.msg.pb;
+
+import "builtin_interfaces/msg/Time.proto";
+
+//This message communicates the current time.
+// 
+// For more information, see https://design.ros2.org/articles/clock_and_time.html.
+message Clock
+{
+
+  builtin_interfaces.msg.pb.Time clock = 511432200;
+}
