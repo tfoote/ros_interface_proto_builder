@@ -1,0 +1,26 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from tf2_msgs:srv/FrameGraph.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package tf2_msgs.srv.pb;
+
+option cc_generic_services = true;
+
+message FrameGraph_Request
+{
+
+  uint32 structure_needs_at_least_one_member = 407246362;
+}
+
+message FrameGraph_Response
+{
+
+  string frame_yaml = 503960139;
+}
+
+service FrameGraph
+{
+  rpc Call (FrameGraph_Request) returns (FrameGraph_Response);
+}
