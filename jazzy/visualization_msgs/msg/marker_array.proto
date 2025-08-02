@@ -1,0 +1,15 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from visualization_msgs:msg/MarkerArray.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package visualization_msgs.msg.pb.jazzy;
+
+import "visualization_msgs/msg/marker.proto";
+
+message MarkerArray
+{
+
+  repeated visualization_msgs.msg.pb.jazzy.Marker markers = 1;
+}

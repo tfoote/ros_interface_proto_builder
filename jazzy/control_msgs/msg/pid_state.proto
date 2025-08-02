@@ -1,0 +1,50 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/PidState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+import "builtin_interfaces/msg/duration.proto";
+import "std_msgs/msg/header.proto";
+
+message PidState
+{
+
+  std_msgs.msg.pb.jazzy.Header             header    =  1;
+  builtin_interfaces.msg.pb.jazzy.Duration timestep  =  2;
+
+  //error = target - state
+  double                                   error     =  3;
+
+  //derivative of error
+  double                                   error_dot =  4;
+
+  //equals error
+  double                                   p_error   =  5;
+
+  //weighted integral of error
+  double                                   i_error   =  6;
+
+  //equals derivative of error
+  double                                   d_error   =  7;
+
+  //proportional gain
+  double                                   p_term    =  8;
+
+  //integral gain
+  double                                   i_term    =  9;
+
+  //derivative gain
+  double                                   d_term    = 10;
+
+  //upper integral clamp.
+  double                                   i_max     = 11;
+
+  //lower integral clamp.
+  double                                   i_min     = 12;
+
+  //output of the PID controller
+  double                                   output    = 13;
+}
