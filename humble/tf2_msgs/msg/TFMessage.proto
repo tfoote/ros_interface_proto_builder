@@ -1,0 +1,15 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from tf2_msgs:msg/TFMessage.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package tf2_msgs.msg.pb;
+
+import "geometry_msgs/msg/TransformStamped.proto";
+
+message TFMessage
+{
+
+  repeated geometry_msgs.msg.pb.TransformStamped transforms = 320780885;
+}

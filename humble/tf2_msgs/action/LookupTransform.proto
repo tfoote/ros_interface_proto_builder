@@ -1,0 +1,84 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from tf2_msgs:action/LookupTransform.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package tf2_msgs.action.pb;
+
+import "builtin_interfaces/msg/Duration.proto";
+import "builtin_interfaces/msg/Time.proto";
+import "geometry_msgs/msg/TransformStamped.proto";
+import "tf2_msgs/msg/TF2Error.proto";
+import "unique_identifier_msgs/msg/UUID.proto";
+
+option cc_generic_services = true;
+
+message LookupTransform_Goal
+{
+
+  string                             target_frame = 156478378;
+  string                             source_frame = 217116612;
+  builtin_interfaces.msg.pb.Time     source_time  = 236858602;
+  builtin_interfaces.msg.pb.Duration timeout      =  21072159;
+
+  //Advanced API
+  builtin_interfaces.msg.pb.Time     target_time  =  42772074;
+  string                             fixed_frame  = 480194458;
+
+  //Whether or not to use the advanced API
+  bool                               advanced     = 479100903;
+}
+
+message LookupTransform_SendGoal_Request
+{
+
+  unique_identifier_msgs.msg.pb.UUID      goal_id = 108866210;
+  tf2_msgs.action.pb.LookupTransform_Goal goal    = 484248182;
+}
+
+message LookupTransform_SendGoal_Response
+{
+
+  bool                           accepted = 371066354;
+  builtin_interfaces.msg.pb.Time stamp    = 357477059;
+}
+
+message LookupTransform_Result
+{
+
+  geometry_msgs.msg.pb.TransformStamped transform = 397578577;
+  tf2_msgs.msg.pb.TF2Error              error     = 501073964;
+}
+
+message LookupTransform_GetResult_Request
+{
+
+  unique_identifier_msgs.msg.pb.UUID goal_id = 108866210;
+}
+
+message LookupTransform_GetResult_Response
+{
+
+  int32                                     status = 453014720;
+  tf2_msgs.action.pb.LookupTransform_Result result = 325764348;
+}
+
+message LookupTransform_Feedback
+{
+
+  uint32 structure_needs_at_least_one_member = 407246362;
+}
+
+message LookupTransform_FeedbackMessage
+{
+
+  unique_identifier_msgs.msg.pb.UUID          goal_id  = 108866210;
+  tf2_msgs.action.pb.LookupTransform_Feedback feedback = 304701367;
+}
+
+service LookupTransform
+{
+  rpc SendGoal (LookupTransform_SendGoal_Request) returns (LookupTransform_SendGoal_Response);
+  rpc GetResult (LookupTransform_GetResult_Request) returns (LookupTransform_GetResult_Response);
+}
