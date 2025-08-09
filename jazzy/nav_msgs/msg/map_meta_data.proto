@@ -1,0 +1,32 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from nav_msgs:msg/MapMetaData.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package nav_msgs.msg.pb.jazzy;
+
+import "builtin_interfaces/msg/time.proto";
+import "geometry_msgs/msg/pose.proto";
+
+//This hold basic information about the characteristics of the OccupancyGrid
+message MapMetaData
+{
+
+
+  //The time at which the map was loaded
+  builtin_interfaces.msg.pb.jazzy.Time map_load_time = 1;
+
+  //The map resolution
+  float                                resolution    = 2; // [m/cell]
+
+  //Map width
+  fixed32                              width         = 3; // [cells]
+
+  //Map height
+  fixed32                              height        = 4; // [cells]
+
+  //The origin of the map [m, m, rad].  This is the real-world pose of the
+  //bottom left corner of cell (0,0) in the map.
+  geometry_msgs.msg.pb.jazzy.Pose      origin        = 5;
+}

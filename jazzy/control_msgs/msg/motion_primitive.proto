@@ -1,0 +1,35 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/MotionPrimitive.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+import "control_msgs/msg/motion_argument.proto";
+import "geometry_msgs/msg/pose_stamped.proto";
+
+message MotionPrimitive
+{
+
+
+  //potentially more, such as spline motion
+  //one of the above
+  int32                                             type                 = 1;
+  double                                            blend_radius         = 2;
+
+  //MotionArguments are meant to be used as vendor-specific or use-case-specific arguments to
+  //MotionPrimitive messages. This is to avoid bloating the MotionPrimitive message with all possible
+  //uses cases but rather add specific data using as a list of key-value pairs, which is what this
+  //message represents.
+  //(max) velocity, (max) acceleration, efficiency
+  repeated control_msgs.msg.pb.jazzy.MotionArgument additional_arguments = 3;
+
+  //Targets should be either specified through joint configurations or Cartesian poses.
+  //Depending on the motion type and implementation, there might be multiple poses allowed.
+  //For example, circular motions are often specified as via and target
+  //Usually one of these is empty, in some edge cases even both can be empty, when all input is given
+  //in the more flexible MotionArgument[] field.
+  repeated geometry_msgs.msg.pb.jazzy.PoseStamped   poses                = 4;
+  repeated double                                   joint_positions      = 5;
+}

@@ -1,0 +1,41 @@
+name: Update Protos
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  schedule:
+   - cron: '35 3 * * *'
+  pull_request:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  unit_tests:
+    name: Update Protos
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        container: ['ros:humble', 'ros:jazzy']
+    container: ${{ matrix.container }}
+
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt-get install -qy python3-rosinstall-generator python3-vcstool
+    - name: Build protos
+      run: ./build_protos.bash
+    - name: Set ownership
+      run: |
+        # this is to fix GIT not liking owner of the checkout dir
+        chown -R $(id -u):$(id -g) $PWD
+    - name: Commit protos
+      run: ./commit_protos.bash
+    - name: Push Protos
+      if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      run: git push origin --force ${ROS_DISTRO}_generated
