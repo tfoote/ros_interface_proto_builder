@@ -1,0 +1,25 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/JointCommand.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+import "std_msgs/msg/header.proto";
+
+//This message contains the command for a specific interface across multiple joints.
+message JointCommand
+{
+
+  std_msgs.msg.pb.jazzy.Header header         = 1;
+
+  //List of joint names to command.
+  repeated string              joint_names    = 2;
+
+  //The specific interface type to command (e.g., "position", "velocity", "effort").
+  string                       interface_name = 3;
+
+  //The commanded values. The length of this array must exactly match the length of joint_names.
+  repeated double              values         = 4;
+}

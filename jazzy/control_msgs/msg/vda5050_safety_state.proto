@@ -1,0 +1,22 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/VDA5050SafetyState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+message VDA5050SafetyState
+{
+
+
+  //Enum {autoAck, manual, remote, none} Acknowledge-Type of eStop:
+  //autoAck: autoacknowledgeable e-stop is activated e.g. by bumper or protective field
+  //manual: e-stop has to be acknowledged manually at the vehicle
+  //remote: facility estop has to be acknowledged remotely
+  //none: no e-stop activated
+  string e_stop          = 1;
+
+  //Protective field violation. True: field is violated False: field is not violated
+  bool   field_violation = 2;
+}
