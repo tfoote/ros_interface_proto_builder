@@ -1,0 +1,48 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/GenericHardwareState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+import "diagnostic_msgs/msg/key_value.proto";
+
+//This message encapsulates the general-purpose status fields, serving as a baseline for any hardware component
+message GenericHardwareState
+{
+
+
+  //--- Health & Error ----------------------------------------------
+  //Overall health status of the device, see HealthStatus constants below
+  uint32                                         health_status       = 1;
+
+  //Array of device errors by category, see ErrorDomain constants below
+  bytes                                          error_domain        = 2;
+
+  //--- Operational State -------------------------------------------
+  //Current operational mode of the device, see ModeStatus constants below
+  uint32                                         operational_mode    = 3;
+
+  //Current power state of the device, see PowerState constants below
+  uint32                                         power_state         = 4;
+
+  //Current connectivity status of the device, see ConnectivityStatus constants below
+  uint32                                         connectivity_status = 5;
+
+  //--- Vendor & Version Info ----------------------------------------
+  //Device manufacturer name, e.g. "Bosch"
+  string                                         manufacturer        = 6;
+
+  //Device model identifier, e.g. "Lidar-XYZ-v2"
+  string                                         model               = 7;
+
+  //Current firmware version, e.g. "1.2.3"
+  string                                         firmware_version    = 8;
+
+  //--- Optional Details for Context ---------------------------------
+  //Provides specific quantitative values related to the enums above.
+  //e.g., for power_state, could have {key: "voltage", value: "24.1"}
+  //e.g., for connectivity, could have {key: "signal_strength", value: "-55dBm"}
+  repeated diagnostic_msgs.msg.pb.jazzy.KeyValue state_details       = 9;
+}

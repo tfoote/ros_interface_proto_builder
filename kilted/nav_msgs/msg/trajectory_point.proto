@@ -1,0 +1,34 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from nav_msgs:msg/TrajectoryPoint.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package nav_msgs.msg.pb.jazzy;
+
+import "geometry_msgs/msg/accel.proto";
+import "geometry_msgs/msg/pose.proto";
+import "geometry_msgs/msg/twist.proto";
+import "geometry_msgs/msg/wrench.proto";
+import "std_msgs/msg/header.proto";
+
+//Trajectory point state
+message TrajectoryPoint
+{
+
+
+  //Absolute time and frame of reference of the point along a trajectory
+  std_msgs.msg.pb.jazzy.Header      header       = 1;
+
+  //Pose of the trajectory sample.
+  geometry_msgs.msg.pb.jazzy.Pose   pose         = 2;
+
+  //Velocity of the trajectory sample.
+  geometry_msgs.msg.pb.jazzy.Twist  velocity     = 3;
+
+  //Acceleration of the trajectory (optional, linear.x component is NaN if not set).
+  geometry_msgs.msg.pb.jazzy.Accel  acceleration = 4;
+
+  //Force/Torque to apply at trajectory sample (optional, force.x component is NaN if not set).
+  geometry_msgs.msg.pb.jazzy.Wrench effort       = 5;
+}

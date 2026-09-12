@@ -1,0 +1,33 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/EtherCATState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+//This message presents EtherCAT-specific device state information
+// Refer ETG.1000 EtherCAT Specification
+message EtherCATState
+{
+
+
+  //Position of the slave on the bus (0, 1, 2...)
+  uint32 slave_position = 1;
+
+  //Unique vendor identifier from the device's ESI file
+  string vendor_id      = 2;
+
+  //Unique product code for the device from the device's ESI file
+  string product_code   = 3;
+
+  //--- EtherCAT State Machine (ESM) ----------------------------------
+  //Application Layer state, see ALState constants below
+  uint32 al_state       = 4;
+
+  //True if the slave is in an error state
+  bool   has_error      = 5;
+
+  //AL Status Code indicating the reason for an error (0 = no error)
+  uint32 al_status_code = 6;
+}

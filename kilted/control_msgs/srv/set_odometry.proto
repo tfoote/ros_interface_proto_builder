@@ -1,0 +1,34 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:srv/SetOdometry.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.srv.pb.jazzy;
+
+option cc_generic_services = true;
+
+message SetOdometry_Request
+{
+
+  double x     = 1;
+  double y     = 2;
+  double z     = 3;
+  double roll  = 4;
+  double pitch = 5;
+  double yaw   = 6;
+}
+
+
+message SetOdometry_Response
+{
+
+  bool   success = 1;
+  string message = 2;
+}
+
+
+service SetOdometry
+{
+  rpc Call (SetOdometry_Request) returns (SetOdometry_Response);
+}

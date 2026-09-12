@@ -1,0 +1,21 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/WrenchFramed.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+import "geometry_msgs/msg/wrench.proto";
+
+//This message represents a wrench (force and torque) expressed in a specific reference frame.
+message WrenchFramed
+{
+
+
+  //The reference frame in which the wrench is expressed.
+  string                            frame_id = 1;
+
+  //The wrench applied.
+  geometry_msgs.msg.pb.jazzy.Wrench wrench   = 2;
+}

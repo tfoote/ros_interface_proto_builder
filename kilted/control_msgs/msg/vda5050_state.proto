@@ -1,0 +1,42 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/VDA5050State.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+//This message presents VDA5050-specific vehicle state information
+// For AGVs and AMRs compliant with VDA5050, this provides a snapshot of the vehicle's high-level status
+// Refer Official Specification document for the VDA 5050 - https://github.com/VDA5050/VDA5050
+message VDA5050State
+{
+
+
+  //--- Order and Action Status ---------------------------------------
+  //ID of the currently executed order
+  string  order_id          = 1;
+
+  //Current action execution status, see ActionStatus constants below
+  string  action_status     = 2;
+
+  //ID of the last reached node in the topology
+  fixed32 last_node_id      = 3;
+
+  //--- Vehicle State -------------------------------------------------
+  //True if the vehicle's drives are active and vehicle is in motion
+  bool    driving           = 4;
+
+  //Current battery charge level in percent (0.0 - 100.0)
+  double  battery_charge    = 5;
+
+  //Current operating mode of the vehicle, see OperatingMode constants below
+  string  operating_mode    = 6;
+
+  //--- Error Reporting -----------------------------------------------
+  //Type/category of the current error, empty string if no error
+  string  error_type        = 7;
+
+  //Human-readable description of the current error, empty string if no error
+  string  error_description = 8;
+}

@@ -1,0 +1,40 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/HardwareDeviceStatus.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+import "control_msgs/msg/ca_nopen_state.proto";
+import "control_msgs/msg/ether_cat_state.proto";
+import "control_msgs/msg/generic_hardware_state.proto";
+import "control_msgs/msg/vda5050_state.proto";
+import "std_msgs/msg/header.proto";
+
+//This message presents current hardware device status information
+message HardwareDeviceStatus
+{
+
+
+  //Header timestamp should be update time of device status
+  std_msgs.msg.pb.jazzy.Header                            header          = 1;
+
+  //Unique identifier for the device, e.g. "base_motor", "gripper_joint_1"
+  string                                                  device_id       = 2;
+
+  //--- Standard-Specific States --------------------------------------
+  //States populated based on the standards relevant to this device.
+  //A device will only fill the arrays for the standards it implements, rest will be empty
+  //Generic hardware status information applicable to any device, it is suggested to fill this for all devices
+  repeated control_msgs.msg.pb.jazzy.GenericHardwareState hardware_status = 3;
+
+  //CANopen-specific device states (DS-301/DS-402 compliant devices)
+  repeated control_msgs.msg.pb.jazzy.CANopenState         canopen_states  = 4;
+
+  //EtherCAT-specific device states (CoE, FoE, etc.)
+  repeated control_msgs.msg.pb.jazzy.EtherCATState        ethercat_states = 5;
+
+  //VDA5050-specific states for AGV/mobile robot devices
+  repeated control_msgs.msg.pb.jazzy.VDA5050State         vda5050_states  = 6;
+}

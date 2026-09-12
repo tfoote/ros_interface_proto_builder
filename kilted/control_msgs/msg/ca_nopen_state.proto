@@ -1,0 +1,29 @@
+// generated from rosidl_adapter_proto/resource/idl.proto.em
+// with input from control_msgs:msg/CANopenState.idl
+// generated code does not contain a copyright notice
+
+syntax = "proto3";
+
+package control_msgs.msg.pb.jazzy;
+
+//This message presents CANopen-specific device state information
+// Refer CiA 301 and CiA 402 application layer documentation
+message CANopenState
+{
+
+
+  //The CANopen node ID of the device (1-127)
+  uint32  node_id        = 1;
+
+  //--- CiA 301 State -------------------------------------------------
+  //Network Management state, see NMTState constants below
+  uint32  nmt_state      = 2;
+
+  //--- CiA 402 State (for drives) ------------------------------------
+  //Drive state machine state for motion control devices, see DSP402State constants below
+  uint32  dsp_402_state  = 3;
+
+  //--- Error Reporting -----------------------------------------------
+  //Last Emergency (EMCY) error code received from the device
+  fixed32 last_emcy_code = 4;
+}
